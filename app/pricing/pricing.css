@@ -1,0 +1,523 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.pricingPage {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.pricingPage.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.pricingPage.dark-mode .pricingTitle {
+  color: #ffffff;
+}
+
+.pricingPage.dark-mode .priceCard {
+  background: #2d2d2d;
+  border-color: #404040;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.pricingPage.dark-mode .priceCard:hover {
+  border-color: #0070f3;
+  box-shadow: 0 15px 30px rgba(0,112,243,0.2);
+}
+
+.pricingPage.dark-mode .priceCard.active {
+  background: #1e3a5f;
+  border-color: #0070f3;
+}
+
+.pricingPage.dark-mode .priceCard h3 {
+  color: #ffffff;
+}
+
+.pricingPage.dark-mode .priceCard p {
+  color: #b0b0b0;
+}
+
+.pricingPage.dark-mode .priceCard h2 {
+  color: #0070f3;
+}
+
+.pricingPage.dark-mode .priceCard h2 span {
+  color: #888;
+}
+
+.pricingPage.dark-mode .subscribeForm {
+  background: #2d2d2d;
+  border-color: #404040;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+
+.pricingPage.dark-mode .subscribeForm h2 {
+  color: #ffffff;
+}
+
+.pricingPage.dark-mode input,
+.pricingPage.dark-mode textarea {
+  background: #3d3d3d;
+  border-color: #505050;
+  color: #ffffff;
+}
+
+.pricingPage.dark-mode input::placeholder,
+.pricingPage.dark-mode textarea::placeholder {
+  color: #888;
+}
+
+.pricingPage.dark-mode input:focus,
+.pricingPage.dark-mode textarea:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.3);
+}
+
+.pricingPage.dark-mode input.error,
+.pricingPage.dark-mode textarea.error {
+  border-color: #ff6b6b;
+  background-color: #442222;
+}
+
+.pricingPage.dark-mode input:disabled,
+.pricingPage.dark-mode textarea:disabled {
+  background-color: #353535;
+  border-color: #454545;
+  color: #888;
+}
+
+.pricingPage.dark-mode .errorMessage {
+  color: #ff6b6b;
+}
+
+.pricingPage.dark-mode .statusMessage.success {
+  background-color: #1e3a2e;
+  color: #98c1a1;
+  border-color: #2d5a3a;
+}
+
+.pricingPage.dark-mode .statusMessage.error {
+  background-color: #442222;
+  color: #ff8a8a;
+  border-color: #662222;
+}
+
+.pricingPage.dark-mode button {
+  background: #0070f3;
+}
+
+.pricingPage.dark-mode button:hover:not(:disabled) {
+  background: #0057c2;
+}
+
+.pricingPage.dark-mode button:disabled {
+  background: #404040;
+  color: #888;
+}
+
+.pricingTitle {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.pricingCards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.priceCard {
+  border: 2px solid #e0e0e0;
+  padding: 30px 25px;
+  width: 260px;
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.priceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: #0070f3;
+}
+
+.priceCard.active {
+  border-color: #0070f3;
+  background: #f5f9ff;
+  box-shadow: 0 10px 25px rgba(0,112,243,0.15);
+}
+
+.priceCard h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.priceCard p {
+  color: #666666;
+  margin: 10px 0;
+  font-size: 1rem;
+  min-height: 45px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.priceCard h2 {
+  margin: 15px 0 0 0;
+  color: #0070f3;
+  font-size: 2rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.priceCard h2 span {
+  font-size: 1rem;
+  color: #888;
+  font-weight: normal;
+  margin-left: 4px;
+  transition: color 0.3s ease;
+}
+
+.subscribeForm {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  border: 1px solid #eaeaea;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.subscribeForm h2 {
+  margin: 0 0 15px 0;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.formGroup {
+  margin-bottom: 10px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.1);
+}
+
+input.error, textarea.error {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+input:disabled, textarea:disabled {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 2px;
+  color: #dc3545;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.statusMessage {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 13px;
+  animation: slideIn 0.2s ease;
+  transition: all 0.3s ease;
+}
+
+.statusMessage.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.statusMessage.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #0070f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  position: relative;
+}
+
+button:hover:not(:disabled) {
+  background: #0057c2;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+button.loading {
+  background: #0057c2;
+  cursor: wait;
+  padding-right: 35px;
+}
+
+button.loading::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+
+@media (max-width: 768px) {
+  .pricingPage {
+    padding: 30px 15px;
+  }
+  
+  .pricingTitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .pricingCards {
+    gap: 15px;
+  }
+  
+  .priceCard {
+    width: 220px;
+    padding: 25px 20px;
+  }
+  
+  .priceCard h3 {
+    font-size: 1.6rem;
+  }
+  
+  .priceCard h2 {
+    font-size: 1.8rem;
+  }
+  
+  .subscribeForm {
+    max-width: 450px;
+    padding: 20px;
+  }
+  
+  .pricingPage.dark-mode .priceCard {
+    background: #2d2d2d;
+  }
+}
+
+@media (max-width: 400px) {
+  .pricingPage {
+    padding: 20px 12px;
+  }
+  
+  .pricingTitle {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .pricingCards {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .priceCard {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px 15px;
+  }
+  
+  .priceCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .priceCard p {
+    font-size: 0.95rem;
+    min-height: 40px;
+  }
+  
+  .priceCard h2 {
+    font-size: 1.7rem;
+    margin-top: 10px;
+  }
+  
+  .priceCard h2 span {
+    font-size: 0.9rem;
+  }
+  
+  .subscribeForm {
+    max-width: 100%;
+    padding: 18px 15px;
+  }
+  
+  .subscribeForm h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  input, textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .pricingPage {
+    padding: 15px 10px;
+  }
+  
+  .pricingTitle {
+    font-size: 1.6rem;
+  }
+  
+  .priceCard {
+    max-width: 260px;
+    padding: 18px 12px;
+  }
+  
+  .priceCard h3 {
+    font-size: 1.4rem;
+  }
+  
+  .priceCard p {
+    font-size: 0.9rem;
+    min-height: 35px;
+  }
+  
+  .priceCard h2 {
+    font-size: 1.5rem;
+  }
+  
+  .subscribeForm {
+    padding: 15px 12px;
+  }
+  
+  .subscribeForm h2 {
+    font-size: 1.1rem;
+  }
+  
+  input, textarea {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    font-size: 11px;
+  }
+  
+  button {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
